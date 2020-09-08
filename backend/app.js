@@ -17,10 +17,10 @@ app.use('/static', express.static(path.join(`${__dirname}/public`)));
 
 app.get('/', (req, res) => res.send('Home Route'));
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000;
 
 mongoose.connect
-    (process.env.DB_HOST, {
+    (`mongodb://localhost:27017/animas`, {
         useCreateIndex: true,
         useUnifiedTopology: true,
         useNewUrlParser: true,
